@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Admin\AdminDashBoardController;
+use App\Http\Controllers\Site\SiteDashBoardController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,16 +14,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(["namespace"=>"site","as"=>"site."],function (){
+
+    Route::get("/",[SiteDashBoardController::class,"index"])->name("index");
+
 });
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+
+
+
+
+Route::group(["prefix"=>"admin","namespace"=>"Admin","as"=>"admin."],function (){
+
+    Route::middleware(["guest:web"])->group(function (){
+        Route::get("/login",[AdminDashBoardController::class,"login"])->name("login");
+    });
+
+    Route::middleware(["auth:web"])->group(function (){
+        Route::get("/",[AdminDashBoardController::class,"index"])->name("index");
+    });
+
 });
