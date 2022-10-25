@@ -23,7 +23,7 @@
                         <img src="{{asset("build/tema/admin/dist/")}}/assets/images/logo/egesedeflogo.png" alt="Logo">
                     </a>
                 </div>
-                <h1 class="auth-title">Admin Giriş</h1>
+                <h1 class="auth-title">Admin Giriiş</h1>
                 <p class="auth-subtitle mb-5">Ege Sedef Avize Site Admin Yönetim Paneli Giriş Bilgileri</p>
                 @if(session('status'))
                     <div class="alert alert-success">
