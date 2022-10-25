@@ -28,6 +28,7 @@ Route::group(["prefix"=>"admin","namespace"=>"Admin","as"=>"admin."],function ()
 
     Route::middleware(["guest:web"])->group(function (){
         Route::get("/login",[AdminDashBoardController::class,"login"])->name("login");
+        Route::post("/check",[AdminDashBoardController::class,"check"])->name("check");
     });
 
     Route::middleware(["auth:web"])->group(function (){
