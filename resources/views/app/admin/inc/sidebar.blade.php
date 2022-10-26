@@ -43,6 +43,13 @@
                     </a>
                 </li>
 
+                <li class="sidebar-item {{(request()->is('admin/katalog')) ? 'active' : ""}} ">
+                    <a href="{{route("admin.katalog.index")}}" class='sidebar-link'>
+                        <i class="fas fa-book-open"></i>
+                        <span>Kataloglar</span>
+                    </a>
+                </li>
+
 
             </ul>
         </div>

@@ -34,8 +34,8 @@ class ComposerStaticInit96cf0020666a005abd897195a091d1bf
         '40275907c8566c390185147049ef6e5d' => __DIR__ . '/..' . '/livewire/livewire/src/helpers.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
-        '320163ac6b93aebe3dc25b60a0533d56' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/helpers.php',
         '6b34c85f7b1ad6faa15aa12109e030f2' => __DIR__ . '/..' . '/realrashid/sweet-alert/src/functions.php',
+        '320163ac6b93aebe3dc25b60a0533d56' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -578,6 +578,7 @@ class ComposerStaticInit96cf0020666a005abd897195a091d1bf
         'App\\Helper\\urlHelper' => __DIR__ . '/../..' . '/app/Helper/urlHelper.php',
         'App\\Http\\Controllers\\Admin\\AdminDashBoardController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/AdminDashBoardController.php',
         'App\\Http\\Controllers\\Admin\\CategoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/CategoryController.php',
+        'App\\Http\\Controllers\\Admin\\KatalogController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/KatalogController.php',
         'App\\Http\\Controllers\\Admin\\ProductController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ProductController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\Site\\SiteDashBoardController' => __DIR__ . '/../..' . '/app/Http/Controllers/Site/SiteDashBoardController.php',
@@ -594,6 +595,8 @@ class ComposerStaticInit96cf0020666a005abd897195a091d1bf
         'App\\Http\\Requests\\ProductRequest' => __DIR__ . '/../..' . '/app/Http/Requests/ProductRequest.php',
         'App\\Models\\Admin\\Product' => __DIR__ . '/../..' . '/app/Models/Admin/Product.php',
         'App\\Models\\Category' => __DIR__ . '/../..' . '/app/Models/Category.php',
+        'App\\Models\\Katalog' => __DIR__ . '/../..' . '/app/Models/Katalog.php',
+        'App\\Models\\KatalogImage' => __DIR__ . '/../..' . '/app/Models/KatalogImage.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
