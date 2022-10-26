@@ -36,6 +36,13 @@
                     </a>
                 </li>
 
+                <li class="sidebar-item {{(request()->is('admin/category')) ? 'active' : ""}} ">
+                    <a href="{{route("admin.category.index")}}" class='sidebar-link'>
+                        <i class="fas fa-list"></i>
+                        <span>Kategoriler</span>
+                    </a>
+                </li>
+
 
             </ul>
         </div>

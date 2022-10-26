@@ -25,6 +25,7 @@
         @include("app.admin.inc.footer")
     </div>
 </div>
+@include('sweetalert::alert')
 @include("app.admin.inc.script")
 </body>
 </html>

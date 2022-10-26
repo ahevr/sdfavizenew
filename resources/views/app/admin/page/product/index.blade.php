@@ -10,8 +10,7 @@
         <div class="card">
             <div class="card-header">
                 <div class="card-title" style="float: right">
-                    <a href="{{route("admin.product.create")}}" class="btn text-bg-danger rounded-5"><i class="fa-solid fa-plus"></i> Yeni Ürün Ekle</a>
-{{--                    <a href="{{route("admin.product.create")}}" class="bg-orange-500 text-white px-4 py-2 border rounded-full hover:bg-red-500 hover:border-orange-500 hover:text-orange-500"><i class="fa-solid fa-plus"></i> Yeni Ürün Ekle</a>--}}
+                    <a href="{{route("admin.product.create")}}" class="btn text-bg-primary rounded-full hover:border-gray-300"><i class="fa-solid fa-plus"></i></a>
                 </div>
                 <h4 class="card-title">Ürünler Listesi</h4>
             </div>
@@ -22,18 +21,31 @@
                         <table class="table table-lg table-bordered">
                             <thead>
                             <tr class="text-center">
-                                <th>Görsell</th>
+                                <th>Görsel</th>
                                 <th>Ürün Adı</th>
-                                <th>Aktif/Pasif</th>
                                 <th>İşlemler</th>
                             </tr>
                             </thead>
                             <tbody>
+                            @foreach($product as $rowProduct)
                                 <tr>
-                                    <td class="text-center ml-2 font-extrabold text-red-500">Michael Right</td>
-                                    <td class="text-center" >$15/hr</td>
-                                    <td class="text-center" >UI/UX</td>
+                                    <td class="text-center w-1">
+                                        <img src="{{asset("build/upload/product/".$rowProduct->image)}}" width="100" alt="{{$rowProduct->name}}">
+                                    </td>
+                                    <td class="text-center ml-2 font-extrabold">{{$rowProduct->name}}</td>
+                                    <td class="text-center">
+                                        <button
+                                            data-url="{{route("admin.product.delete",$rowProduct)}}"
+                                            class="btn btn-danger silButton">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                        <a href="{{route("admin.product.edit",$rowProduct)}}"
+                                           class="btn btn-primary">
+                                            <i class="fa-solid fa-edit"></i>
+                                        </a>
+                                    </td>
                                 </tr>
+                            @endforeach
                             </tbody>
                         </table>
                     </div>

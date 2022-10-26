@@ -1,9 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Controllers\Admin\AdminDashBoardController;
 use App\Http\Controllers\Site\SiteDashBoardController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\CategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,6 +43,20 @@ Route::group(["prefix"=>"admin","as"=>"admin."],function (){
             ->group(function (){
                 Route::get('/', 'index')->name('index');
                 Route::get('/create', 'create')->name('create');
+                Route::post('/store', 'store')->name('store');
+                Route::get('/delete/{id}', 'delete')->name('delete');
+                Route::get('/edit/{id}', 'edit')->name('edit');
+                Route::post('/update/{id}', 'update')->name('update');
+            });
+
+        Route::controller(CategoryController::class)
+            ->prefix("category")
+            ->as("category.")
+            ->group(function (){
+                Route::get('/', 'index')->name('index');
+                Route::post('/addCategory', 'store')->name('addCategory');
+                Route::get('/delete/{id}', 'delete')->name('deleteCategory');
+                Route::get('/deleteSub/{id}', 'deleteSub')->name('deleteCategorySub');
             });
 
     });
