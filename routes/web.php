@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminDashBoardController;
 use App\Http\Controllers\Site\SiteDashBoardController;
+use App\Http\Controllers\Admin\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,7 +25,7 @@ Route::group(["namespace"=>"site","as"=>"site."],function (){
 
 
 
-Route::group(["prefix"=>"admin","namespace"=>"Admin","as"=>"admin."],function (){
+Route::group(["prefix"=>"admin","as"=>"admin."],function (){
 
     Route::middleware(["guest:web"])->group(function (){
         Route::get("/login",[AdminDashBoardController::class,"login"])->name("login");
@@ -33,6 +34,15 @@ Route::group(["prefix"=>"admin","namespace"=>"Admin","as"=>"admin."],function ()
 
     Route::middleware(["auth:web"])->group(function (){
         Route::get("/",[AdminDashBoardController::class,"index"])->name("index");
+
+        Route::controller(ProductController::class)
+            ->prefix("product")
+            ->as("product.")
+            ->group(function (){
+                Route::get('/', 'index')->name('index');
+                Route::get('/create', 'create')->name('create');
+            });
+
     });
 
 });
