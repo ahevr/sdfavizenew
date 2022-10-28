@@ -29,16 +29,32 @@ class ProductController extends Controller
 
     public function store(ProductRequest $request){
 
-        $products = new Product();
-        $products->url = urlHelper::permalink($request->name);
-        $products->category_id = $request->category_id;
-        $products->created_by = Auth::guard("web")->id();
-        $products->update_by = 0;
-        $products->name  = $request->name;
-        $products->kod   = $request->kod;
-        $products->image = $request->image;
-        $products->save();
-        return redirect("admin/product")->with("toast_success","$request->name". " Adlı Ürün Başarılı Bir Şekilde Eklendi");
+//        ****************************************************************
+
+        Product::create([
+            "category_id"=> $request->category_id,
+            "name"       => $request->name,
+            "kod"        => $request->kod,
+            "image"      => $request->image,
+        ]);
+
+//        ****************************************************************
+
+
+//        $products = new Product();
+//        $products->url = urlHelper::permalink($request->name);
+//        $products->category_id = $request->category_id;
+//        $products->created_by = Auth::guard("web")->id();
+//        $products->update_by = 0;
+//        $products->name  = $request->name;
+//        $products->kod   = $request->kod;
+//        $products->image = $request->image;
+//        $products->save();
+
+
+//        ****************************************************************
+
+        return to_route('admin.product.index')->with("toast_success","$request->name". " Adlı Ürün Başarılı Bir Şekilde Eklendi");
 
     }
 

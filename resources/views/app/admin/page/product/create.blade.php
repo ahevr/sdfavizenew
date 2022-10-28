@@ -11,15 +11,24 @@
             <div class="card-header">
                 <h4 class="card-title">Ürün Ekle</h4>
             </div>
-            @if (count($errors) > 0)
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
+
+            <div role="alert">
+                @if ($errors->any())
+                    <hr>
+                    <div class="bg-red-500 text-white font-bold rounded-t px-4 py-2">
+                        Bir Hata Var !
+                    </div>
+                    <div class="border border-t-0 border-red-400 rounded-b bg-red-100 px-4 py-3 text-red-700">
+                        @foreach($errors->all() as $errors)
+                            <li>
+                                {{$errors}}
+                            </li>
                         @endforeach
-                    </ul>
-                </div>
-            @endif
+                    </div>
+                    <hr>
+                @endif
+            </div>
+
             <div class="card-body">
                 <form action="{{route("admin.product.store")}}" method="post" enctype="multipart/form-data">
                     @csrf
@@ -27,12 +36,13 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="basicInput">Ürün Adı</label>
-                                <input type="text" class="form-control" id="basicInput" name="name" placeholder="Ürün Adı">
+                                <input type="text" class="form-control" id="basicInput" name="name" placeholder="Ürün Adı" value="{{ old('name') }}">
+
                             </div>
 
                             <div class="form-group">
                                 <label for="basicInput">Ürün Kodu</label>
-                                <input type="text" class="form-control" id="basicInput" name="kod" placeholder="Ürün Kodu">
+                                <input type="text" class="form-control" id="basicInput" name="kod" placeholder="Ürün Kodu" value="{{ old('kod') }}">
                             </div>
 
                             <div class="form-group">
