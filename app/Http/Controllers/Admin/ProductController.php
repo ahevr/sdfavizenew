@@ -29,16 +29,20 @@ class ProductController extends Controller
 
     public function store(ProductRequest $request){
 
-//        ****************************************************************
+//        **********************YÖNTEM 1******************************************
 
-        Product::create([
-            "category_id"=> $request->category_id,
-            "name"       => $request->name,
-            "kod"        => $request->kod,
-            "image"      => $request->image,
-        ]);
+        Product::create($request->all());
 
-//        ****************************************************************
+//        *********************YÖNTEM 2*******************************************
+
+//        Product::create([
+//            "category_id"=> $request->category_id,
+//            "name"       => $request->name,
+//            "kod"        => $request->kod,
+//            "image"      => $request->image,
+//        ]);
+
+//        *********************YÖNTEM 3*******************************************
 
 
 //        $products = new Product();
