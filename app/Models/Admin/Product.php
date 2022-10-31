@@ -3,9 +3,6 @@
 namespace App\Models\Admin;
 
 use App\Helper\urlHelper;
-use App\Http\Requests\ProductRequest;
-use http\Env\Request;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 

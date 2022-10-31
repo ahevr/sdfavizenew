@@ -37,6 +37,7 @@ Route::group(["prefix"=>"admin","as"=>"admin."],function (){
 
     Route::middleware(["auth:web"])->group(function (){
         Route::get("/",[AdminDashBoardController::class,"index"])->name("index");
+        Route::post("/logout", [AdminDashBoardController::class,"logout"])->name('logout');
 
         Route::controller(ProductController::class)
             ->prefix("product")
@@ -50,15 +51,6 @@ Route::group(["prefix"=>"admin","as"=>"admin."],function (){
                 Route::post('/update/{id}', 'update')->name('update');
                 Route::get("/file-export",'fileExport')->name("file-export");
                 Route::post("/file-import","fileImport")->name("file-import");
-
-
-
-//                Route::get("/file-export", "ProductController@fileExport")->name("file-export");
-//                Route::post("/file-import", "ProductController@fileImport")->name('file-import');
-//                Route::post("/file-update", "ProductController@fileUpdate")->name('file-update');
-
-
-
 
             });
 
@@ -83,6 +75,20 @@ Route::group(["prefix"=>"admin","as"=>"admin."],function (){
                 Route::get('/galeri/{id}', 'galeri')->name('galeri');
                 Route::post('/galeriStore/{katalogs_id}', 'galeriStore')->name('galeriStore');
             });
+
+
+        Route::controller(AdminDashBoardController::class)
+            ->prefix("users")
+            ->as("users.")
+            ->group(function (){
+                Route::get('/', 'getUser')->name('index');
+                Route::get('/create', 'userCreate')->name('userCreate');
+                Route::post('/store', 'userStore')->name('userStore');
+                Route::get('/edit/{id}', 'userEdit')->name('userEdit');
+                Route::post('/update/{id}', 'userUpdate')->name('userUpdate');
+            });
+
+
 
     });
 

@@ -50,6 +50,23 @@
                     </a>
                 </li>
 
+                <li class="sidebar-item {{(request()->is('admin/users')) ? 'active' : ""}} ">
+                    <a href="{{route("admin.users.index")}}" class='sidebar-link'>
+                        <i class="fas fa-users-cog"></i>
+                        <span>Kullanıcılar</span>
+                    </a>
+                </li>
+
+
+                <hr>
+                <li class="sidebar-item">
+                    <form action="{{route("admin.logout")}}" method="post">
+                        @csrf
+                        <button type="submit" class="btn btn-sm btn-danger"><i class="fas fa-sign-out-alt"></i> Çıkış Yap</button>
+                    </form>
+                    </a>
+                </li>
+
 
             </ul>
         </div>
