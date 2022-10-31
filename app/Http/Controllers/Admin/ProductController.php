@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Exports\ProductExport;
 use App\Helper\urlHelper;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductRequest;
+use App\Imports\ProductImport;
 use App\Models\Admin\Product;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ProductController extends Controller
 {
@@ -88,5 +91,15 @@ class ProductController extends Controller
         $blog->delete();
         return back()->with("toast_success","Ürün Başarılı Bir Şekilde Silindi");
 
+    }
+    public function fileExport(){
+
+        return Excel::download(new ProductExport, 'product-collection.xlsx');
+    }
+
+    public function fileImport(Request $request){
+
+        Excel::import(new ProductImport,request()->file('file'));
+        return back();
     }
 }

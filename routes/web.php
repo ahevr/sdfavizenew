@@ -48,6 +48,18 @@ Route::group(["prefix"=>"admin","as"=>"admin."],function (){
                 Route::get('/delete/{id}', 'delete')->name('delete');
                 Route::get('/edit/{id}', 'edit')->name('edit');
                 Route::post('/update/{id}', 'update')->name('update');
+                Route::get("/file-export",'fileExport')->name("file-export");
+                Route::post("/file-import","fileImport")->name("file-import");
+
+
+
+//                Route::get("/file-export", "ProductController@fileExport")->name("file-export");
+//                Route::post("/file-import", "ProductController@fileImport")->name('file-import');
+//                Route::post("/file-update", "ProductController@fileUpdate")->name('file-update');
+
+
+
+
             });
 
         Route::controller(CategoryController::class)

@@ -14,8 +14,38 @@
                 </div>
                 <h4 class="card-title">Ürünler Listesi</h4>
             </div>
+            @if(count($product) == 0 )
+                <div class="card text-center">
+                    <div class="card-header text-center">
+                        <b>Uyarı</b>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Herhangi Bir Ürün Bulunmamaktadır.</h5>
+                    </div>
+                </div>
+            @else
             <div class="card-content">
                 <div class="card-body">
+
+{{--                    <div class="container mt-5 text-center">--}}
+{{--                        <h2 class="mb-4">--}}
+{{--                            Laravel 7 Import and Export CSV & Excel to Database Example--}}
+{{--                        </h2>--}}
+{{--                        <form action="{{ route('admin.product.file-import') }}" method="POST" enctype="multipart/form-data">--}}
+{{--                            @csrf--}}
+{{--                            <div class="form-group mb-4" style="max-width: 500px; margin: 0 auto;">--}}
+{{--                                <div class="custom-file text-left">--}}
+{{--                                    <input type="file" name="file" class="custom-file-input" id="customFile">--}}
+{{--                                    <label class="custom-file-label" for="customFile">Choose file</label>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            <button class="btn btn-primary">Import data</button>--}}
+{{--                            <a class="btn btn-success" href="{{ route('admin.product.file-export') }}">Export data</a>--}}
+{{--                        </form>--}}
+{{--                    </div>--}}
+
+
+
                     <!-- Table with outer spacing -->
                     <div class="table-responsive">
                         <table class="table table-lg table-bordered">
@@ -48,9 +78,17 @@
                             @endforeach
                             </tbody>
                         </table>
+                        <div class="card-body">
+                            <nav aria-label="Page navigation example flex items-center space-x-1">
+                                <ul class="pagination flex justify-content-end px-4 py-2 rounded-full">
+                                    {{$product->onEachSide(0)->links()}}
+                                </ul>
+                            </nav>
+                        </div>
                     </div>
                 </div>
             </div>
+            @endif
         </div>
     </div>
 @endsection
