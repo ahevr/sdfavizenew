@@ -26,7 +26,7 @@ class ProductRequest extends FormRequest
         return [
             "name" => "required",
             "kod" =>"required",
-            "image" =>"required"
+            "image" =>'required|mimes:png,jpg,jpeg',
         ];
     }
 }

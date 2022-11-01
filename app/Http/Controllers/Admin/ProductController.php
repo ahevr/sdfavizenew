@@ -32,7 +32,6 @@ class ProductController extends Controller
 
     public function store(ProductRequest $request){
 
-
 //        **********************YÖNTEM 1******************************************
 
         $request->except('_token');

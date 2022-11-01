@@ -60,7 +60,7 @@
                             <div class="form-group">
                                 <div class="input-upload">
                                     <label for="roundText">Görsel:</label>
-                                    <input type="file" name="image" class="form-control">
+                                    <input type="file" name="image" class="form-control" >
                                 </div>
                             </div>
                         </div>
