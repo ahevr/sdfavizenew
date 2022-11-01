@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Hash;
 
 class AdminDashBoardController extends Controller
 {
+
     public function login(){
 
         return view("auth.login");
@@ -105,4 +106,5 @@ class AdminDashBoardController extends Controller
         return redirect("admin/login")->with("toast_success","Çıkış Başarılı");
 
     }
+
 }

@@ -8,6 +8,7 @@ use App\Http\Requests\ProductRequest;
 use App\Models\Katalog;
 use App\Models\KatalogImage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use function GuzzleHttp\Promise\all;
 
 class KatalogController extends Controller

@@ -28,3 +28,15 @@
         });
     });
 </script>
+
+<script>
+    document.querySelectorAll('form').forEach(function (form){
+        form.addEventListener('submit',function (){
+            var button = form.querySelector('[type=submit]');
+
+            button.classList.add('disabled');
+        })
+    })
+</script>
+
+

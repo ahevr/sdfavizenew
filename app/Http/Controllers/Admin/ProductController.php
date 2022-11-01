@@ -17,23 +17,25 @@ class ProductController extends Controller
 {
     public function index(){
 
-        $product= Product::orderBy("id","DESC")->paginate(10);
-        return view("app.admin.page.product.index")
-            ->with("product",$product);
+        $product=  Product::orderBy("id","DESC")->paginate(10);
+        return view("app.admin.page.product.index",["product" => $product]);
+
 
     }
 
     public function create(){
 
         $category = Category::all();
-        return view("app.admin.page.product.create")->with("category",$category);
+        return view("app.admin.page.product.create",["category"=>$category]);
 
     }
 
     public function store(ProductRequest $request){
 
+
 //        **********************YÖNTEM 1******************************************
 
+        $request->except('_token');
         Product::create($request->all());
 
 //        *********************YÖNTEM 2*******************************************
@@ -69,18 +71,15 @@ class ProductController extends Controller
 
         $category = Category::all();
         $product = Product::findOrFail($id);
-        return view("app.admin.page.product.edit")->with("category",$category)->with("product",$product);
+        return view("app.admin.page.product.edit",["category"=>$category,"product"=>$product]);
     }
 
     public function update(ProductRequest $request,$id){
 
         $product = Product::findOrFail($id);
         $product->url = urlHelper::permalink($request->name);
-        $product->category_id = $request->category_id;
         $product->update_by = Auth::guard("web")->id();
-        $product->name  = $request->name;
-        $product->kod   = $request->kod;
-        $product->image = $request->image;
+        $product->fill($request->all());
         $product->update();
         return redirect("admin/product")->with("toast_success","$request->name". " Adlı Ürün Başarılı Bir Şekilde Güncellendi");
     }

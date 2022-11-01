@@ -14,8 +14,7 @@
                 </div>
                 <h4 class="card-title">Katalog Listesi</h4>
             </div>
-            @if(count($katalog) == 0 )
-
+            @if($katalog->isEmpty())
                 <div class="holder ">
                     <div class="row justify-content-center">
                         <div class="card text-center">

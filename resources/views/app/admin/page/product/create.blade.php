@@ -6,6 +6,8 @@
     </div>
 @endsection
 @section("content")
+
+
     <section class="section">
         <div class="card">
             <div class="card-header">

@@ -14,7 +14,7 @@
                 </div>
                 <h4 class="card-title">Ürünler Listesi</h4>
             </div>
-            @if(count($product) == 0 )
+            @if($product->isEmpty())
                 <div class="card text-center">
                     <div class="card-header text-center">
                         <b>Uyarı</b>
