@@ -20,7 +20,7 @@
                         <b class="text-red-500 text-xl" >Uyarı</b>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title text-center">Herhangi Bir Katalog Bulunmamaktadır....</h5>
+                        <h5 class="card-title text-center">Herhangi Bir Katalog Bulunmamaktadır..</h5>
                     </div>
                 </div>
             @else
