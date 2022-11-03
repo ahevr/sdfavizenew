@@ -17,15 +17,18 @@
             @if($product->isEmpty())
                 <div class="card text-center">
                     <div class="card-header text-center">
-                        <b>Uyarı</b>
+                        <b class="text-red-500 text-xl" >Uyarı</b>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title text-center">Herhangi Bir Ürün Bulunmamaktadır.</h5>
+                        <h5 class="card-title text-center">Herhangi Bir Ürün Bulunmamaktadır...</h5>
                     </div>
                 </div>
             @else
             <div class="card-content">
                 <div class="card-body">
+
+
+{{-- **********************************************************! burası excel ile ürün ekleme kısmı --}}
 
 {{--                    <div class="container mt-5 text-center">--}}
 {{--                        <h2 class="mb-4">--}}
@@ -43,6 +46,7 @@
 {{--                            <a class="btn btn-success" href="{{ route('admin.product.file-export') }}">Export data</a>--}}
 {{--                        </form>--}}
 {{--                    </div>--}}
+{{-- **********************************************************! burası excel ile ürün ekleme kısmı --}}
 
 
 

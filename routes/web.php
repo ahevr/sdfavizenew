@@ -87,6 +87,7 @@ Route::group(["prefix"=>"admin","as"=>"admin."],function (){
                 Route::get('/edit/{id}', 'userEdit')->name('userEdit');
                 Route::post('/update/{id}', 'userUpdate')->name('userUpdate');
             });
+            
 
 
 

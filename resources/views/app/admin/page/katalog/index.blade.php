@@ -15,16 +15,12 @@
                 <h4 class="card-title">Katalog Listesi</h4>
             </div>
             @if($katalog->isEmpty())
-                <div class="holder ">
-                    <div class="row justify-content-center">
-                        <div class="card text-center">
-                            <div class="card-header text-center">
-                                <b>Uyarı</b>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title text-center">Herhangi Bir Katalog Bulunmamaktadır.</h5>
-                            </div>
-                        </div>
+                <div class="card text-center">
+                    <div class="card-header text-center">
+                        <b class="text-red-500 text-xl" >Uyarı</b>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Herhangi Bir Katalog Bulunmamaktadır....</h5>
                     </div>
                 </div>
             @else
