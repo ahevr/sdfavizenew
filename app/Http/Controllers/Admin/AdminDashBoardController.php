@@ -99,6 +99,14 @@ class AdminDashBoardController extends Controller
 
     }
 
+    public function userDelete($id){
+        
+        $user = User::findOrFail($id);
+        $user->delete();
+
+        return back()->with("toast_success","İşlem Kullanıcı Bir Şekilde Güncellendi");
+    }
+
     public function logout(){
 
         Auth::guard("web")->logout();

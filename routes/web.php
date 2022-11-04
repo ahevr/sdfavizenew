@@ -7,6 +7,7 @@ use App\Http\Controllers\Site\SiteDashBoardController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\KatalogController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -86,6 +87,7 @@ Route::group(["prefix"=>"admin","as"=>"admin."],function (){
                 Route::post('/store', 'userStore')->name('userStore');
                 Route::get('/edit/{id}', 'userEdit')->name('userEdit');
                 Route::post('/update/{id}', 'userUpdate')->name('userUpdate');
+                Route::get('/delete/{id}', 'userDelete')->name('userDelete');
             });
             
 

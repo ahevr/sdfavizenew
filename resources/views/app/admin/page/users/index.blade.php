@@ -35,6 +35,11 @@
                                             <a class="btn btn-primary" href="{{ route('admin.users.userEdit',$rowusers) }}">
                                                 <i class="fa-solid fa-edit"></i>
                                             </a>
+                                            <button
+                                            data-url="{{route("admin.users.userDelete",$rowusers)}}"
+                                            class="btn btn-danger silButton">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
                                         </td>
                                     </tr>
                                 @endforeach
