@@ -57,6 +57,14 @@
                     </a>
                 </li>
 
+                <li class="sidebar-item {{(request()->is('admin/setting')) ? 'active' : ""}} ">
+                    <a href="{{route("admin.setting.index")}}" class='sidebar-link'>
+                        <i class="fas fa-cogs"></i>
+                        <span>Ayarlar</span>
+                    </a>
+                </li>
+
+
 
                 <hr>
                 <li class="sidebar-item">
