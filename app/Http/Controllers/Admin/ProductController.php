@@ -32,12 +32,14 @@ class ProductController extends Controller
 
     public function store(ProductRequest $request){
 
-//        **********************YÖNTEM 1******************************************
+//        ! **********************YÖNTEM 1******************************************
 
         $request->except('_token');
         Product::create($request->all());
 
-//        *********************YÖNTEM 2*******************************************
+        // Product modelin içinde statik verileri gönderdik. Kalan verileride tokeni çıkartıp db ye ekledik. to_route(laravel 9 ile geldi) yönlendirmesini yaptık. 
+
+//        ! *********************YÖNTEM 2*******************************************
 
 //        Product::create([
 //            "category_id"=> $request->category_id,
@@ -46,7 +48,7 @@ class ProductController extends Controller
 //            "image"      => $request->image,
 //        ]);
 
-//        *********************YÖNTEM 3*******************************************
+//        ! *********************YÖNTEM 3*******************************************
 
 
 //        $products = new Product();

@@ -46,6 +46,7 @@
 {{--                            <a class="btn btn-success" href="{{ route('admin.product.file-export') }}">Export data</a>--}}
 {{--                        </form>--}}
 {{--                    </div>--}}
+
 {{-- **********************************************************! ##burası excel ile ürün ekleme kısmı --}}
 
 
